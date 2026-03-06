@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cinemática Multimodal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Simulador de Cinemática Multimodal</h1>
+        <p>Estude lançamentos Oblíquos, Horizontais e Verticais</p>
+    </header>
+
+    <main class="container">
+        <aside class="converter">
+            <p><strong>Conversor Auxiliar: </strong> 
+                <input type="number" id="input-kmh" placeholder="Valor em km/h"> 
+                <button id="btn-convert">Converter para m/s</button>
+            </p>
+        </aside>
+
+        <section class="controls" aria-label="Controlos da Simulação">
+            <div class="inputs-row">
+                <label>Modo de Lançamento:
+                    <select id="input-tipo">
+                        <option value="obliquo">Oblíquo</option>
+                        <option value="horizontal">Horizontal</option>
+                        <option value="vertical">Vertical</option>
+                    </select>
+                </label>
+                <label>Altura Inicial (m): 
+                    <input type="number" id="input-h0" value="0" min="0" step="1">
+                </label>
+            </div>
+            <div class="inputs-row">
+                <label>Velocidade (V₀ m/s): <input type="number" id="input-v0" value="20" min="1"></label>
+                <label>Ângulo (θ): <input type="range" id="input-angle" min="0" max="90" value="45"> <span id="angle-val">45°</span></label>
+            </div>
+            <div class="buttons-row">
+                <button id="btn-fire" class="btn-primary">DISPARAR!</button>
+                <button id="btn-clear" class="btn-warning">Limpar Trajetórias</button>
+            </div>
+        </section>
+
+        <section class="dashboard" aria-label="Painel de Dados">
+            <article class="dashboard-col">
+                <p><strong>Tempo (t):</strong> <span id="time-display">0.00</span> s</p>
+                <p><strong>Alcance (x):</strong> <span id="x-display">0.00</span> m</p>
+            </article>
+            <article class="dashboard-col">
+                <p><strong>Velocidade Y (Vy):</strong> <span id="vy-display">0.00</span> m/s</p>
+                <p><strong>Altura (y):</strong> <span id="y-display">0.00</span> m</p>
+            </article>
+        </section>
+
+        <figure class="canvas-wrapper">
+            <canvas id="simuladorCanvas" width="800" height="400" aria-label="Visualização animada do lançamento"></canvas>
+        </figure>
+
+        <figure class="chart-container">
+            <canvas id="kinematicsChart" aria-label="Gráfico de trajetória"></canvas>
+        </figure>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

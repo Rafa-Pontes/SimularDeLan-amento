@@ -1,0 +1,83 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #2c3e50; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; 
+    color: #333;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+header p { font-size: 14px; opacity: 0.8; margin-top: 5px; }
+
+.container { 
+    width: 100%;
+    max-width: 900px; 
+    background: #ffffff; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+}
+
+/* Ferramenta Auxiliar */
+.converter {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.converter input { padding: 5px; border: 1px solid #ccc; border-radius: 4px; width: 100px; margin-right: 10px; }
+
+/* Controlos */
+.controls { 
+    background: #f8f9fa; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ddd; 
+}
+
+.inputs-row { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    flex-wrap: wrap; 
+}
+.inputs-row label { font-weight: bold; display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.inputs-row input[type="number"], .inputs-row select { padding: 6px; border: 1px solid #ccc; border-radius: 4px; width: 90px; }
+
+.buttons-row { display: flex; gap: 15px; }
+
+button { 
+    padding: 10px 20px; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;
+}
+button:hover { opacity: 0.8; }
+.btn-primary { background-color: #28a745; }
+.btn-warning { background-color: #ffc107; color: #333; }
+#btn-convert { background-color: #6c757d; font-size: 12px; padding: 6px 12px; }
+
+/* Dashboard */
+.dashboard {
+    background: #e9ecef; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-around; font-size: 15px;
+}
+.dashboard-col p { margin: 5px 0; }
+
+/* Figuras Visuais */
+figure { margin: 0; padding: 0; }
+.canvas-wrapper { 
+    background: #e3f2fd; border: 3px solid #1976d2; border-radius: 8px; overflow: hidden; margin-bottom: 20px;
+}
+canvas#simuladorCanvas { display: block; width: 100%; }
+.chart-container { position: relative; height: 300px; width: 100%; }
